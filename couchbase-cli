@@ -9,6 +9,7 @@ import getopt
 import sys
 import os
 
+import commands as cbcli
 import listservers
 import buckets
 import node
@@ -191,8 +192,6 @@ def main():
                        " please see -h for more help.") % _args
         usage.command_error(err_message)
     commands = {
-        'host-list'         : listservers.ListServers,
-        'server-list'       : listservers.ListServers,
         'server-info'       : info.Info,
         'server-eshell'     : info.Info,
         'server-add'        : node.Node,
@@ -237,6 +236,9 @@ def main():
         usage.short_usage(commands)
 
     cmd = sys.argv[1]
+
+    if cbcli.parse_command():
+        return
 
     if cmd not in commands:
         # cmd not a command, maybe help is needed.

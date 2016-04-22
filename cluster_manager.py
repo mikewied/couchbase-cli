@@ -117,11 +117,13 @@ class ClusterManager(object):
 
         return hosts, None
 
-    def pools(self):
+    def pools(self, pool=None):
         """ Retrieves information about Couchbase management pools
 
         Returns Couchbase pools data"""
         url = self.hostname + '/pools'
+        if pool:
+            url += '/' + pool
         return self._get(url)
 
     def get_server_groups(self):
