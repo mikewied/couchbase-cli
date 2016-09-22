@@ -10,7 +10,6 @@ import time
 
 from optparse import HelpFormatter, OptionContainer, OptionGroup, OptionParser
 from cluster_manager import ClusterManager
-from node import _exitIfErrors, _warning
 
 try:
     from gettext import gettext
@@ -141,6 +140,34 @@ def process_services(services, is_enterprise):
 
 def _deprecated(msg):
     print "DEPRECATED: " + msg
+
+def _warning(msg):
+    print "WARNING: " + msg
+
+def _exitIfErrors(errors):
+    if errors:
+        for error in errors:
+            print "ERROR: " + error
+        sys.exit(1)
+
+def _exitOnFileWriteFailure(fname, bytes):
+    try:
+        fp = open(fname, 'w')
+        fp.write(bytes)
+        fp.close()
+    except IOError, error:
+        print "ERROR: ", error
+        sys.exit(1)
+
+def _exitOnFileReadFailure(fname):
+    try:
+        fp = open(fname, 'r')
+        bytes = fp.read()
+        fp.close()
+        return bytes
+    except IOError, error:
+        print "ERROR: ", error
+        sys.exit(1)
 
 class CLIOptionParser(OptionParser):
     """A custom parser for subcommands"""
@@ -1715,6 +1742,51 @@ class SettingNotification(Command):
 
         print "SUCCESS: Notification settings updated"
 
+
+class SSLManage(Command):
+    """The user manage subcommand"""
+
+    def __init__(self):
+        super(SSLManage, self).__init__()
+        self.parser.set_usage("couchbase-cli ssl-manage [options]")
+
+    def execute(self, opts, args):
+        host, port = host_port(opts.cluster)
+        rest = ClusterManager(host, port, opts.username, opts.password, opts.ssl)
+        check_cluster_initialized(rest)
+
+        if self.cmd in ['retrieve', 'regenerate', 'upload-cluster-ca'] and self.certificate_file is None:
+            command_error("please specify certificate file name for the operation")
+
+        cm = cluster_manager.ClusterManager(self.server, self.port, self.user, self.password, self.ssl)
+
+        if self.cmd  == 'regenerate':
+            certificate, errors = cm.regenerate_cluster_certificate()
+            _exitIfErrors(errors)
+            _exitOnFileWriteFailure(self.certificate_file, certificate)
+            print "SUCCESS: %s certificate to '%s'" % (self.cmd, self.certificate_file)
+        elif self.cmd == 'cluster-cert-info':
+            certificate, errors = cm.retrieve_cluster_certificate(self.extended)
+            _exitIfErrors(errors)
+            if isinstance(certificate, dict):
+                print json.dumps(certificate, sort_keys=True, indent=2)
+            else:
+                print certificate
+        elif self.cmd == 'node-cert-info':
+            certificate, errors = cm.retrieve_node_certificate('%s:%d' % (self.server, self.port))
+            _exitIfErrors(errors)
+            print json.dumps(certificate, sort_keys=True, indent=2)
+        elif self.cmd == 'upload-cluster-ca':
+            certificate = _exitOnFileReadFailure(self.certificate_file)
+            _, errors = cm.upload_cluster_certificate(certificate)
+            _exitIfErrors(errors)
+            print "SUCCESS: uploaded cluster certificate to %s:%d" % (self.server, self.port)
+        elif self.cmd == 'set-node-certificate':
+            _, errors = cm.set_node_certificate()
+            _exitIfErrors(errors)
+            print "SUCCESS: node certificate set"
+        else:
+            print "ERROR: unknown request:", self.cmd
 
 class UserManage(Command):
     """The user manage subcommand"""
