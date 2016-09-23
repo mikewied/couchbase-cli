@@ -1,0 +1,44 @@
+couchbase-cli-cluster-edit(1)
+=============================
+
+NAME
+----
+couchbase-cli-cluster-edit - Edits cluster settings
+
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli cluster-edit'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

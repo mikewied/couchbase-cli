@@ -1,0 +1,44 @@
+couchbase-cli-node-init(1)
+==========================
+
+NAME
+----
+couchbase-cli-node-init - Initializes a node
+
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli node-init'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

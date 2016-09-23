@@ -1,0 +1,43 @@
+couchbase-cli-user-manage(1)
+============================
+
+NAME
+----
+couchbase-cli-user-manage - Manage the read-only user
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli user-manage'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

@@ -1,0 +1,43 @@
+couchbase-cli-xdcr-setup(1)
+===========================
+
+NAME
+----
+couchbase-cli-xdcr-setup - Creates a reference to a remote cluster
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli xdcr-setup'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

@@ -1,0 +1,43 @@
+couchbase-cli-server-info(1)
+============================
+
+NAME
+----
+couchbase-cli-server-info - Displays server level information and statistics
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli server-info'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

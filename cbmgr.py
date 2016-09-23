@@ -8,8 +8,9 @@ import subprocess
 import sys
 import time
 
-from optparse import HelpFormatter, OptionContainer, OptionGroup, OptionParser
 from cluster_manager import ClusterManager
+from optparse import HelpFormatter, OptionContainer, OptionGroup, OptionParser
+from subprocess import call
 
 try:
     from gettext import gettext
@@ -90,7 +91,14 @@ def help_callback(option, opt_str, value, parser, *args, **kwargs):
     if opt_str == "-h":
         command.short_help()
     elif opt_str == "--help":
-        command.short_help()
+		if os.name == "nt":
+			command.short_help()
+		else:
+			exe_path = os.path.abspath(sys.argv[0])
+			base_path = os.path.dirname(exe_path)
+			manpage = os.path.join(base_path, "docs", "couchbase-cli-cluster-init.txt")
+			call(["cat", manpage])
+			sys.exit(0)
 
 def check_cluster_initialized(rest):
     """Checks to see if the cluster is initialized"""

@@ -1,0 +1,44 @@
+couchbase-cli-server-add(1)
+===========================
+
+NAME
+----
+couchbase-cli-server-add - Adds a server to the cluster
+
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli server-add'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

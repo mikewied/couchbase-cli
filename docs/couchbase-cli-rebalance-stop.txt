@@ -1,0 +1,44 @@
+couchbase-cli-rebalance-stop(1)
+===============================
+
+NAME
+----
+couchbase-cli-rebalance-stop - Stops the current rebalance task
+
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli rebalance-stop'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

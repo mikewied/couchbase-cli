@@ -1,0 +1,43 @@
+couchbase-cli-setting-xdcr(1)
+=============================
+
+NAME
+----
+couchbase-cli-setting-xdcr - Modifies cross datacenter replication (XDCR) settings
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli setting-xdcr'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

@@ -1,0 +1,43 @@
+couchbase-cli-server-eshell(1)
+==============================
+
+NAME
+----
+couchbase-cli-server-eshell - Opens a shell to talk to the cluster manager process
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli server-eshell'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

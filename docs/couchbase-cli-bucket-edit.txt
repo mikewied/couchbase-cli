@@ -1,0 +1,44 @@
+couchbase-cli-bucket-edit(1)
+============================
+
+NAME
+----
+couchbase-cli-bucket-delete - Edit a Couchbase data bucket
+
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli bucket-edit'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]

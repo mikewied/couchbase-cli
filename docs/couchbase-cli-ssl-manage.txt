@@ -1,0 +1,43 @@
+couchbase-cli-ssl-manage(1)
+===========================
+
+NAME
+----
+couchbase-cli-ssl-manage - Manage SSL certificates
+
+SYNOPSIS
+--------
+[verse]
+'couchbase-cli ssl-manage'
+
+DESCRIPTION
+-----------
+This page is not yet completed.
+
+OPTIONS
+-------
+
+include::part-common-options.txt[]
+
+include::part-host-formats.txt[]
+
+EXAMPLES
+--------
+
+TBD
+
+DISCUSSION
+----------
+
+TBD
+
+ENVIRONMENT AND CONFIGURATION VARIABLES
+---------------------------------------
+
+include::part-common-env.txt[]
+
+SEE ALSO
+--------
+TBD
+
+include::part-footer.txt[]
